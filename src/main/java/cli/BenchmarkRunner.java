@@ -1,6 +1,7 @@
 package cli;
 
 import algorithms.InsertionSort;
+import algorithms.InsertionSortOptimized;
 import metrics.CsvWriter;
 import metrics.PerformanceTracker;
 
@@ -24,12 +25,17 @@ public class BenchmarkRunner {
         for (int t = 0; t < trials; t++) {
             int[] data = generateArray(n, distribution);
             PerformanceTracker m;
+
             switch (algo) {
+                case "InsertionSortOptimized":
+                    m = InsertionSortOptimized.runWithMetrics(data, distribution);
+                    break;
                 case "InsertionSort":
                 default:
                     m = InsertionSort.runWithMetrics(data, distribution);
                     break;
             }
+
             CsvWriter.appendRow("docs/performance.csv", m);
             System.out.printf("%s n=%d trial=%d -> %.3f ms, comps=%d, swaps=%d%n",
                     m.algorithm(), m.n(), t + 1, m.elapsedMs(), m.getComparisons(), m.getSwaps());
