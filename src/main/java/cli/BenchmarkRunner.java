@@ -14,6 +14,7 @@ public class BenchmarkRunner {
         int n = 1000;
         String distribution = "random";
         int trials = 3;
+        
 
         for (String arg : args) {
             if (arg.startsWith("--algo=")) algo = arg.substring(7);

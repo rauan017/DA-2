@@ -1,0 +1,4 @@
+started_at,algorithm,dataset,n,elapsed_ns,elapsed_ms,comparisons,swaps,reads,writes,recursive_calls,iterations,memory_delta_bytes
+2025-10-01T14:28:34.700295100Z,InsertionSort,random,1000,11249200,11.249,257763,0,258762,257767,0,999,-1390328
+2025-10-01T14:28:34.820684900Z,InsertionSort,random,1000,1128800,1.129,257763,0,258762,257767,0,999,-21560
+2025-10-01T14:28:34.857742900Z,InsertionSort,random,1000,7839000,7.839,257763,0,258762,257767,0,999,-20920
